@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <meta charset="utf-8"> 
+       <title>gridtemplatearea</title>
+       <style type="text/css">
+           *{
+               margin: 0;
+               padding: 0;
+           }
+           .element{
+               padding: 2em;
+               background-color: aquamarine;
+               border-radius: 10px;
+           }
+           .container{
+               display: grid;
+               grid-template: repeat(4, 1fr)/repeat(5, 1fr);
+               grid-gap: 10px;
+               grid-template-areas: "header header header header header"   
+                                    "content content content content aside"
+                                    "content content content content aside"
+                                    "footer footer footer footer footer";
+           }
+           .ele1{
+               grid-area: header;
+           }
+           .ele2{
+               grid-area: content;
+           }
+           .ele3{
+               grid-area: aside;
+           }
+           .ele4{
+               grid-area: footer;
+           }
+           @media (max-width:600px){
+               body{
+                   background-color: blueviolet;
+               }
+               .container{
+                   grid-template: repeat(1,1fr)/repeat(1,1fr);
+                   grid-template-areas: "header"   
+                                        "content"
+                                        "aside"
+                                        "footer";   
+               }
+           }
+        </style>
+    </head>
+    <body> 
+        <div class="container">    
+            <div class="element ele1">1</div>
+            <div class="element ele2">2</div>
+            <div class="element ele3">3</div>
+            <div class="element ele4">4</div>
+        </div>   
+    </body>
+</html>
